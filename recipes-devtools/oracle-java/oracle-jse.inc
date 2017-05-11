@@ -41,9 +41,9 @@ PROVIDES += "virtual/java"
 inherit update-alternatives
 
 pkg_postinst_${PN} () {
-	update-alternatives --install ${bindir}/java java ${JDK_HOME}/jre/bin/java 75
+	update-alternatives --install ${bindir}/java java ${JDK_HOME}/bin/java 75
 }
 
 pkg_prerm_${PN} () {
-	update-alternatives --remove java ${JDK_HOME}/jre/bin/java
+	update-alternatives --remove java ${JDK_HOME}/bin/java
 }
