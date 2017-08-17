@@ -12,11 +12,14 @@ JDK_JRE = "jdk"
 require oracle-jse.inc
 
 do_install_class-native() {
-	install -d -m 0755			${D}${libdir_jvm}
+	install -d				${D}${libdir_jvm}
 	cp -a ${S}/${JDK_JRE}${PV}_${PV_UPDATE}	${D}${JDK_HOME}
 
+	install -d				${D}${bindir}
 	ln -sf ${JDK_HOME}/bin/java		${D}${bindir}
 	ln -sf ${JDK_HOME}/bin/javac		${D}${bindir}
+
+	install -d				${D}${JDK_HOME}/bin
 	ln -sf javah				${D}${JDK_HOME}/bin/gjavah
 	ln -sf jar				${D}${JDK_HOME}/bin/fastjar
 }
