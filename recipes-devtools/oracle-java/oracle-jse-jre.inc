@@ -12,3 +12,5 @@ JDK_JRE = "jre"
 require oracle-jse.inc
 
 BBCLASSEXTEND = "native"
+
+RDEPENDS_${PN} += " libasound atk cairo gdk-pixbuf mesa gtk+ libxtst libxi"
