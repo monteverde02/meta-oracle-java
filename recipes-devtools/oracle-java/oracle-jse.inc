@@ -19,7 +19,8 @@ JDK_HOME = "${libdir_jvm}/${JDK_DIR}"
 
 do_install () {
 	install -d -m 0755			${D}${libdir_jvm}
-	cp -a ${S}/${JDK_JRE}${PV}_${PV_UPDATE}	${D}${JDK_HOME}
+	cp -a --no-preserve=ownership \
+		${S}/${JDK_JRE}${PV}_${PV_UPDATE}	${D}${JDK_HOME}
 }
 
 # All the files are provided in a binaray package, and keeping all the
