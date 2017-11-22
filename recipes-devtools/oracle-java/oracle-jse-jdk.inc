@@ -16,10 +16,10 @@ do_install_class-native() {
 	cp -a ${S}/${JDK_JRE}${PV}_${PV_UPDATE}	${D}${JDK_HOME}
 
 	install -d				${D}${bindir}
-	ln -sf ${JDK_HOME}/bin/java		${D}${bindir}
-	ln -sf ${JDK_HOME}/bin/javac		${D}${bindir}
-	ln -sf ${JDK_HOME}/bin/javah		${D}${bindir}
-	ln -sf ${JDK_HOME}/bin/jar		${D}${bindir}
+	ln -sf ../lib/jvm/${JDK_DIR}/bin/java		${D}${bindir}
+	ln -sf ../lib/jvm/${JDK_DIR}/bin/javac		${D}${bindir}
+	ln -sf ../lib/jvm/${JDK_DIR}/bin/javah		${D}${bindir}
+	ln -sf ../lib/jvm/${JDK_DIR}/bin/jar		${D}${bindir}
 
 	install -d				${D}${JDK_HOME}/bin
 	ln -sf javah				${D}${JDK_HOME}/bin/gjavah
